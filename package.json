@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
-    "build:prod": "npm run clean && set NODE_ENV=production && webpack",
-    "build": "npm run clean && set NODE_ENV=development && webpack --mode development",
+    "build:prod": "npm run clean && cross-env NODE_ENV=production webpack",
+    "build": "npm run clean && cross-env NODE_ENV=development webpack --mode development",
     "test": "jest"
   },
   "author": "",
@@ -21,9 +21,11 @@
     "@babel/preset-stage-2": "^7.8.3",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
@@ -32,7 +34,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "jest": "^26.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

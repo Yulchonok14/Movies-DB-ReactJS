@@ -1,10 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProd = process.env.NODE_ENV.trim() === 'production';
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    mode: process.env.NODE_ENV.trim(),
+    mode: process.env.NODE_ENV,
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
