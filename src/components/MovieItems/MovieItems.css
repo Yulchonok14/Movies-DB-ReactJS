@@ -1,0 +1,15 @@
+.MovieItems {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    align-items: center;
+    background-color: #232323;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.NoFilms {
+    color: #FFFFFF;
+    font-size: 25px;
+}

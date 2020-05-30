@@ -1,0 +1,106 @@
+.MoviePanel {
+    display: flex;
+    justify-content: stretch;
+    padding: 0 20px 50px;
+    color: #FFFFFF;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MoviePanel img {
+    width: 50vw;
+}
+
+.Details {
+    flex-grow: 1;
+}
+
+.Details label {
+    font-size: 13px;
+    opacity: 0.5;
+    padding: 0 8px;
+    margin-right: 40px;
+}
+
+.Details div {
+    display: flex;
+    align-items: flex-end;
+    margin: 40px 0;
+}
+
+.Title {
+    font-size: 40px;
+    opacity: 0.8;
+}
+
+.Rating {
+    color: #A1E66F;
+    font-size: 25px;
+    margin-left: 25px;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 15px;
+    border-radius: 35px;
+}
+
+.Date {
+    color: #F65261;
+    font-size: 25px;
+}
+
+.Duration {
+    color: #F65261;
+    font-size: 25px;
+}
+
+.Description {
+    line-height: 24px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .MovieItem {
+        width: 35vw;
+    }
+
+    .MoviePanel {
+        padding: 0 20px 50px;
+        flex-direction: row;
+    }
+
+    .Details {
+        padding-left: 20px;
+        width: 70vw;
+        padding-left: 50px;
+    }
+
+    .Description {
+        max-height: 125px;
+    }
+
+    .MoviePanel img {
+        height: 35vh;
+        width: auto;
+    }
+}
+
+@media (min-width: 1001px) {
+    .Title {
+        font-size: 52px;
+    }
+
+    .MoviePanel {
+        padding: 0 100px 50px;
+        flex-direction: row;
+    }
+
+    .Details {
+        width: 70vw;
+        padding-left: 50px;
+    }
+
+    .MoviePanel img {
+        height: 45vh;
+        width: auto;
+    }
+}

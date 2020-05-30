@@ -1,0 +1,20 @@
+.InfoBar {
+    background-color: #555555;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.InfoBar span {
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    .InfoBar {
+        padding: 25px 10vw;
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,19 @@
+.SearchPanel {
+    padding: 60px 20px;
+}
+
+.SearchPanel span{
+    font-size: 30px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+    .SearchPanel {
+        padding: 0 100px 80px;
+    }
+
+    .SearchPanel span{
+        font-size: 40px;
+    }
+}
