@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Filter from '../UI/Filter/Filter';
 import classes from './InfoBar.css';
 
-const infoBar = (props) => (
+const InfoBar = (props) => (
     <div className={classes.InfoBar}>
         <span>{props.resultText}</span>
         <Filter
@@ -14,4 +15,16 @@ const infoBar = (props) => (
     </div>
 );
 
-export default infoBar;
+InfoBar.propTypes = {
+    resultText: PropTypes.string.isRequired,
+    switchSearchFilter: PropTypes.func,
+    showFilter: PropTypes.bool,
+    label: PropTypes.string,
+    sortByFilter: PropTypes.arrayOf(PropTypes.shape({
+        id:PropTypes.number,
+        text:PropTypes.string,
+        isActive: PropTypes.bool
+    }))
+};
+
+export default InfoBar;

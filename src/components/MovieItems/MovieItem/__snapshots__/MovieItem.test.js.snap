@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieItems/> MovieItem renders correctly 1`] = `
+<div
+  onClick={[MockFunction]}
+>
+  <img
+    src="https://i1.wp.com/morbidlybeautiful.com/wp-content/uploads/2015/10/kk-2.jpg"
+  />
+  <div>
+    <div>
+      <span>
+        Knock knock
+      </span>
+      <span>
+        Horror, Thriller
+      </span>
+    </div>
+    <span>
+      2011
+    </span>
+  </div>
+</div>
+`;

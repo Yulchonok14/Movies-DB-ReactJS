@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieHunter/> MovieHunter renders correctly 1`] = `
+Array [
+  <div>
+    <span>
+      find your movie
+    </span>
+    <div>
+      <input
+        placeholder="search"
+      />
+      <button
+        onClick={[Function]}
+      >
+        search
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+    >
+      <label>
+        search by
+      </label>
+      <div>
+        <button
+          onClick={[Function]}
+        >
+          title
+        </button>
+        <button
+          className={null}
+          onClick={[Function]}
+        >
+          genre
+        </button>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <span>
+      6 movie found
+    </span>
+    <div
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+    >
+      <label>
+        sort by
+      </label>
+      <div>
+        <button
+          className={null}
+          onClick={[Function]}
+        >
+          release date
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          rating
+        </button>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/ru/9/9d/Bloodshot_poster.jpg"
+      />
+      <div>
+        <div>
+          <span>
+            Bloodshot
+          </span>
+          <span>
+            Action, Drama, Sci-Fi
+          </span>
+        </div>
+        <span>
+          2020
+        </span>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/a90dd0dd-a8ae-4112-9865-23eb8f5879a8/360"
+      />
+      <div>
+        <div>
+          <span>
+            The invisible man
+          </span>
+          <span>
+            Horror, Sci-Fi, Thriller
+          </span>
+        </div>
+        <span>
+          2019
+        </span>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/ru/5/5e/Monster_Trucks_%28film%29.jpg"
+      />
+      <div>
+        <div>
+          <span>
+            Monster trucks
+          </span>
+          <span>
+            Adventure, Action, Comedy
+          </span>
+        </div>
+        <span>
+          2019
+        </span>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://laughingsquid.com/wp-content/uploads/2014/01/CCTN_poster_Billy_HD-for-web.jpg"
+      />
+      <div>
+        <div>
+          <span>
+            Cold comes the night
+          </span>
+          <span>
+            Drama, Thriller, Crime
+          </span>
+        </div>
+        <span>
+          2016
+        </span>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/ru/1/1a/Snowden_%28film%29.jpg"
+      />
+      <div>
+        <div>
+          <span>
+            Snowden
+          </span>
+          <span>
+            Drama, Thriller, Biography
+          </span>
+        </div>
+        <span>
+          2010
+        </span>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <img
+        src="https://i1.wp.com/morbidlybeautiful.com/wp-content/uploads/2015/10/kk-2.jpg"
+      />
+      <div>
+        <div>
+          <span>
+            Knock knock
+          </span>
+          <span>
+            Horror, Thriller
+          </span>
+        </div>
+        <span>
+          2011
+        </span>
+      </div>
+    </div>
+  </div>,
+]
+`;

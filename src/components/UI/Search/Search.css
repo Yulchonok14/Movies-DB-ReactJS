@@ -33,6 +33,7 @@
     height: 60px;
     font-size: 20px;
     border: none;
+    outline: none;
 }
 
 .Search button:hover {

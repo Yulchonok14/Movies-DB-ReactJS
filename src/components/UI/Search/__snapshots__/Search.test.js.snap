@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search/> Search renders correctly 1`] = `
+<div>
+  <input
+    placeholder="search"
+  />
+  <button
+    onClick={[Function]}
+  >
+    search
+  </button>
+</div>
+`;

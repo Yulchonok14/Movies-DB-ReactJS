@@ -4,7 +4,7 @@ import classes from './NavigationItems.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 import Magnifier from '../../../assets/images/magnifier.png';
 
-const navigationItems = () => (
+const NavigationItems = () => (
     <ul className={classes.NavigationItems}>
         <NavigationItem link="/" active>
             <img src={Magnifier} alt="MagnifierSign"/>
@@ -12,4 +12,4 @@ const navigationItems = () => (
     </ul>
 );
 
-export default navigationItems;
+export default NavigationItems;

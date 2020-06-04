@@ -5,7 +5,7 @@ import MovieHunter from './containers/MovieHunter/MovieHunter';
 import MovieDetails from './containers/MovieDetails/MovieDetails';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-const app = () => {
+const App = () => {
     return (
         <ErrorBoundary>
             <Layout>
@@ -15,4 +15,4 @@ const app = () => {
     )
 };
 
-export default app;
+export default App;

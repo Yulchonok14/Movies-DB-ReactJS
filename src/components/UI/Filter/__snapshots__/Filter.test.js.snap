@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filter/> Filter renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <label>
+    Label
+  </label>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      release date
+    </button>
+    <button
+      className={null}
+      onClick={[Function]}
+    >
+      rating
+    </button>
+  </div>
+</div>
+`;

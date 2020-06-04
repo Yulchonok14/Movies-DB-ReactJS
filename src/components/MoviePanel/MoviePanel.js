@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './MoviePanel.css';
 
-const moviePanel = (props) => (
+const MoviePanel = (props) => (
     <div className={classes.MoviePanel}>
         <img src={props.selectedMovie.imageUrl} alt="Selected movie poster."/>
         <div className={classes.Details}>
@@ -19,4 +20,17 @@ const moviePanel = (props) => (
     </div>
 );
 
-export default moviePanel;
+MoviePanel.propTypes = {
+    selectedMovie: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        rating: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        duration: PropTypes.string.isRequired
+    })
+};
+
+export default MoviePanel;

@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
 import classes from './Search.css';
 
-const search = (props) => {
+const Search = (props) => {
     const inputRef = useRef(null);
     return (
         <div className={classes.Search}>
@@ -13,4 +13,8 @@ const search = (props) => {
     )
 };
 
-export default search;
+Search.propTypes = {
+    clicked: PropTypes.func.isRequired
+};
+
+export default Search;
