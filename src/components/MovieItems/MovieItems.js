@@ -9,13 +9,13 @@ const MovieItems = (props) => {
         <div className={classes.MovieItems}>{props.movieItems.length > 0
             ?
             props.movieItems
-                .map((item, index) => <MovieItem
+                .map(item => <MovieItem
                     key={item.id}
-                    imgUrl={item.imageUrl}
+                    imgUrl={item.poster_path}
                     title={item.title}
-                    date={item.date}
-                    genre={item.genre}
-                    clicked={() => props.chosenItem(index)}
+                    date={item.release_date.slice(0, 4)}
+                    genre={item.genres.join(', ')}
+                    clicked={() => props.chosenItem(item)}
                 />)
             : <div className={classes.NoFilms}>No films found</div>
         }</div>
@@ -26,12 +26,12 @@ MovieItems.propTypes = {
     movieItems: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        rating: PropTypes.string.isRequired,
-        imageUrl: PropTypes.string.isRequired,
-        genre: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        duration: PropTypes.string.isRequired
+        vote_average: PropTypes.number.isRequired,
+        poster_path: PropTypes.string.isRequired,
+        genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+        release_date: PropTypes.string.isRequired,
+        overview: PropTypes.string.isRequired,
+        runtime: PropTypes.number
     })),
     chosenItem: PropTypes.func.isRequired
 };

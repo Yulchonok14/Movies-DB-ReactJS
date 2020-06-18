@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './MovieItem.css';
+import ImageNotFound from '../../../assets/images/image_not_found.png';
 
 const MovieItem = (props) => (
     <div onClick={props.clicked} className={classes.MovieItem}>
-        <img src={props.imgUrl}/>
+        <img src={props.imgUrl} onError={(e)=>{e.target.onerror = null; e.target.src=ImageNotFound}}/>
         <div className={classes.Description}>
             <div>
                 <span>{props.title}</span>

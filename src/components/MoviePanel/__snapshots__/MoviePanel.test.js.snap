@@ -4,6 +4,7 @@ exports[`<MoviePanel/> MoviePanel renders correctly 1`] = `
 <div>
   <img
     alt="Selected movie poster."
+    onError={[Function]}
     src="https://i1.wp.com/morbidlybeautiful.com/wp-content/uploads/2015/10/kk-2.jpg"
   />
   <div>

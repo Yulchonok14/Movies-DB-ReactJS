@@ -8,7 +8,7 @@
 }
 
 .MoviePanel img {
-    width: 50vw;
+    width: 70vw;
 }
 
 .Details {
@@ -40,6 +40,8 @@
     border: 1px solid rgba(255,255,255,0.5);
     padding: 15px;
     border-radius: 35px;
+    width: 35px;
+    text-align: center;
 }
 
 .Date {
@@ -69,9 +71,13 @@
     }
 
     .Details {
-        padding-left: 20px;
         width: 70vw;
         padding-left: 50px;
+    }
+
+    .Details div:first-of-type {
+        display: flex;
+        align-items: flex-start;
     }
 
     .Description {
@@ -97,6 +103,11 @@
     .Details {
         width: 70vw;
         padding-left: 50px;
+    }
+
+    .Details div:first-of-type {
+        display: flex;
+        align-items: flex-start;
     }
 
     .MoviePanel img {

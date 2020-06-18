@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MovieItems/> MovieItem renders correctly 1`] = `
+exports[`<MovieItem/> MovieItem renders correctly 1`] = `
 <div
   onClick={[MockFunction]}
 >
   <img
+    onError={[Function]}
     src="https://i1.wp.com/morbidlybeautiful.com/wp-content/uploads/2015/10/kk-2.jpg"
   />
   <div>
@@ -13,11 +14,11 @@ exports[`<MovieItems/> MovieItem renders correctly 1`] = `
         Knock knock
       </span>
       <span>
-        Horror, Thriller
+        Horror, Thriller, Adventure
       </span>
     </div>
     <span>
-      2011
+      2011-05-01
     </span>
   </div>
 </div>

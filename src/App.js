@@ -10,6 +10,7 @@ const App = () => {
         <ErrorBoundary>
             <Layout>
                 <MovieHunter/>
+                <MovieDetails/>
             </Layout>
         </ErrorBoundary>
     )

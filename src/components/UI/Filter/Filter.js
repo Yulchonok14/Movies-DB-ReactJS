@@ -5,13 +5,12 @@ import classes from './Filter.css';
 
 const Filter = (props) => {
     const filterBtns = props.buttons
-        ?
-        props.buttons.map((btn, index) =>
+        ? props.buttons.map((btn, index) =>
             <button
                 className={btn.isActive ? classes.Active: null}
                 key={btn.id}
                 onClick={()=>props.clicked(index)}>
-                {btn.text}
+                {btn.label}
             </button>)
         : null;
     return (

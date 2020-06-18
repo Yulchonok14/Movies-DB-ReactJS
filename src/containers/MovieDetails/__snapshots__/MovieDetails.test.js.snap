@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MovieDetails/> MovieDetails renders correctly 1`] = `
+exports[`<MovieDetails/> capturing Snapshot of MovieDetails 1`] = `
 Array [
   <div>
     <img
       alt="Selected movie poster."
+      onError={[Function]}
       src="https://upload.wikimedia.org/wikipedia/ru/9/9d/Bloodshot_poster.jpg"
     />
     <div>
@@ -51,25 +52,8 @@ Array [
     </div>
   </div>,
   <div>
-    <div
-      onClick={[Function]}
-    >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/ru/5/5e/Monster_Trucks_%28film%29.jpg"
-      />
-      <div>
-        <div>
-          <span>
-            Monster trucks
-          </span>
-          <span>
-            Adventure, Action, Comedy
-          </span>
-        </div>
-        <span>
-          2019
-        </span>
-      </div>
+    <div>
+      No films found
     </div>
   </div>,
 ]
