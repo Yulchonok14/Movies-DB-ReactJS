@@ -119,7 +119,7 @@ describe('<MovieHunter/>', () => {
 
     it('check search button click', () => {
         let mockCallBack = jest.fn();
-        wrapper = mount(<MovieHunter movieItems={movieItems} onMovieSearched={mockCallBack}/>);
+        wrapper = mount(<MovieHunter movieItems={movieItems} onMovieSearched={mockCallBack} onMovieChosen={mockCallBack}/>);
         wrapper.find(SearchPanel).find(Search).find('button').simulate('click');
         expect(mockCallBack).toBeCalled();
     })

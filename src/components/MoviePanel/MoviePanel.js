@@ -6,7 +6,7 @@ import ImageNotFound from '../../assets/images/image_not_found.png';
 
 const MoviePanel = (props) => (
     <div className={classes.MoviePanel}>
-        <img src={props.selectedMovie.poster_path}  onError={(e)=>{e.target.onerror = null; e.target.src=ImageNotFound}} alt="Selected movie poster."/>
+        <img src={props.selectedMovie.poster_path}  onError={(e)=>{e.target.onerror = null; e.target.src='/'+ImageNotFound}} alt="Selected movie poster."/>
         <div className={classes.Details}>
             <div>
                 <span className={classes.Title}>{props.selectedMovie.title}</span>

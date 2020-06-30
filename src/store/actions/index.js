@@ -2,7 +2,8 @@ export {
     searchMovieDetails,
     chooseMovieDetails,
     passChosenMovie,
-    getDetailsMovies
+    getDetailsMovies,
+    getMovieDetails
 } from './movieDetailsActions';
 export {
     searchMovieHunter,

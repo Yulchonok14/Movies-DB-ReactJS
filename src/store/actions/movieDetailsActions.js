@@ -17,6 +17,17 @@ export const searchMovieDetails = (searchText) => {
     }
 };
 
+export const getMovieDetails = (movieId) => {
+    let url = 'https://reactjs-cdp.herokuapp.com/movies/' + movieId;
+    return dispatch => {
+        return fetch(url)
+            .then(response => response.json())
+            .then(movieItem => {
+                dispatch(passChosenMovie(movieItem))
+            } )
+    }
+};
+
 export const getDetailsMovies = (movieItems) => {
     return {
         type: actionTypes.GET_MOVIES_DETAILS,
@@ -26,10 +37,10 @@ export const getDetailsMovies = (movieItems) => {
     }
 };
 
-export const chooseMovieDetails = (id) => {
+export const chooseMovieDetails = (movieItem) => {
     return {
         type: actionTypes.CHOOSE_MOVIE_DETAILS,
-        payload: {id: id}
+        payload: {movieItem: movieItem}
     }
 };
 

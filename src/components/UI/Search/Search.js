@@ -7,7 +7,7 @@ const Search = (props) => {
     const inputRef = useRef(null);
     return (
         <div className={classes.Search}>
-            <input ref={inputRef} placeholder="search"/>
+            <input ref={inputRef} placeholder="search" defaultValue={props.searchText}/>
             <button onClick={() => props.clicked(inputRef.current.value.toLowerCase())}>search</button>
         </div>
     )

@@ -12,8 +12,15 @@ export class MovieHunter extends Component {
 
     state = {
         searchFilterArr: searchByButtonsArr,
-        sortFilterArr: sortByButtonsArr
+        sortFilterArr: sortByButtonsArr,
+        searchText: ''
     };
+
+    componentDidMount() {
+        const searchText = this.props.match.params.text;
+        this.props.onMovieSearched(searchText, this.props.searchFilter);
+        this.setState({searchText: searchText})
+    }
 
     componentDidUpdate(prevProps){
         if(this.props.sortFilter !== prevProps.sortFilter){
@@ -45,23 +52,38 @@ export class MovieHunter extends Component {
         this.props.onSortFilterSwitched(sortText);
     };
 
+    movieSearchHandler = (text) => {
+        this.props.history.push({
+            pathname: '/search/' + text
+        });
+        this.props.onMovieSearched(text, this.props.searchFilter);
+    };
+
+    chooseMovieHandler = (movie) => {
+        this.props.history.push({
+            pathname: '/film/' + movie.id
+        });
+        this.props.onMovieChosen(movie);
+    };
+
 
     render() {
         return (
             <React.Fragment>
                 <SearchPanel
-                    searchBtn={(text) => this.props.onMovieSearched(text, this.props.searchFilter)}
+                    searchBtn={(text) => this.movieSearchHandler(text)}
                     switchSearchFilter={this.switchSearchFilterHandler}
                     showSearch
                     label={'search by'}
-                    searchByFilter={this.state.searchFilterArr}/>
+                    searchByFilter={this.state.searchFilterArr}
+                    searchTxt={this.state.searchText}/>
                 <InfoBar
                     switchSearchFilter={this.switchSortFilterHandler}
                     resultText={this.props.movieItems.length + ' movie found'}
                     showFilter
                     label={'sort by'}
                     sortByFilter={this.state.sortFilterArr}/>
-                <MovieItems chosenItem={this.props.onMovieChosen} movieItems={this.props.movieItems}/>
+                <MovieItems chosenItem={(movie) => this.chooseMovieHandler(movie)} movieItems={this.props.movieItems}/>
             </React.Fragment>
         )
     }

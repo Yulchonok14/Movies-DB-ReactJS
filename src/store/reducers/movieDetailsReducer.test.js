@@ -46,7 +46,7 @@ describe('movie details reducer', () => {
         expect(
             movieDetailsReducer({movieDetailsItems: movieItems}, {
                 type: actionTypes.CHOOSE_MOVIE_DETAILS,
-                payload: { id: 111 }
+                payload: { movieItem: movieItems[0] }
             })
         ).toEqual(
             {

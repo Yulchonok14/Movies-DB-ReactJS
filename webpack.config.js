@@ -9,7 +9,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: ''
+        publicPath: '/'
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'build'),
+        compress: false,
+        port: 9000,
+        historyApiFallback: true,
     },
     devtool: isProd ? 'none' : 'cheap-module-eval-source-map',
     module: {

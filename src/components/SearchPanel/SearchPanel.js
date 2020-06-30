@@ -10,6 +10,7 @@ const SearchPanel = (props) => (
         <span>find your movie</span>
         <Search
             clicked={props.searchBtn}
+            searchText={props.searchTxt}
         />
         <Filter
             clicked={props.switchSearchFilter}

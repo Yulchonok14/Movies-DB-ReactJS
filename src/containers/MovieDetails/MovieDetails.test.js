@@ -69,7 +69,7 @@ describe('<MovieDetails/>', () => {
     it('test mapDispatchToProps', () => {
         const dispatch = jest.fn();
         mapDispatchToProps(dispatch).onMovieChosen(111);
-        expect(dispatch.mock.calls[0][0]).toEqual({type: actionTypes.CHOOSE_MOVIE_DETAILS, payload:{'id': 111}});
+        expect(dispatch.mock.calls[0][0]).toEqual({type: actionTypes.CHOOSE_MOVIE_DETAILS, payload:{'movieItem': 111}});
 
         mapDispatchToProps(dispatch).onMovieSearched('test');
         expect(dispatch.mock.calls[1][0]).toBeDefined();
