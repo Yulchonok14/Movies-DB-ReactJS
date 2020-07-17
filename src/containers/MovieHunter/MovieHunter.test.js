@@ -20,6 +20,32 @@ configure({
     adapter: new Adapter()
 });
 
+describe('ConnectedMovieHunter', () => {
+    const initialState = {
+        hunter: {
+            movieHunterItems: [],
+            searchFilter: 'title',
+            sortFilter: 'release_date'
+        },
+        searchFilterArr: searchByButtonsArr,
+        sortFilterArr: sortByButtonsArr
+    };
+    const mockStore = configureStore([thunk]);
+    jest.spyOn(ConnectedMovieHunter.WrappedComponent.prototype, 'componentDidMount').mockImplementation();
+    let store, wrapper;
+
+    beforeEach(() => {
+        store = mockStore(initialState);
+        wrapper = mount(<ConnectedMovieHunter store={store}/>);
+    });
+
+    it('check Prop matches with initialState', () => {
+        expect(wrapper.find(MovieHunter).prop('movieItems')).toEqual(initialState.hunter.movieHunterItems);
+        expect(wrapper.find(MovieHunter).prop('sortFilter')).toEqual(initialState.hunter.sortFilter);
+        expect(wrapper.find(MovieHunter).prop('searchFilter')).toEqual(initialState.hunter.searchFilter);
+    });
+});
+
 describe('<MovieHunter/>', () => {
     const initialState = {
         hunter: {
@@ -31,21 +57,26 @@ describe('<MovieHunter/>', () => {
         sortFilterArr: sortByButtonsArr
     };
     const mockStore = configureStore([thunk]);
+    let mockCallBack = jest.fn();
+    let mockSortFilterSwitchedCallBack = jest.fn();
+    let mockSearchFilterSwitchedCallBack = jest.fn();
+    let mockSortMoviesCallBack = jest.fn();
     let store, wrapper;
 
     beforeEach(() => {
         store = mockStore(initialState);
-        wrapper = mount(<ConnectedMovieHunter store={store}/>);
+        wrapper = mount(<MovieHunter
+            onSortMovies={mockSortMoviesCallBack}
+            movieItems={movieItems}
+            onMovieSearched={mockCallBack}
+            onMovieChosen={mockCallBack}
+            onSortFilterSwitched={mockSortFilterSwitchedCallBack}
+            onSearchFilterSwitched={mockSearchFilterSwitchedCallBack}
+            history={[]}/>);
     });
 
     it('render the connected component', () => {
         expect(wrapper.length).toEqual(1);
-    });
-
-    it('check Prop matches with initialState', () => {
-        expect(wrapper.find(MovieHunter).prop('movieItems')).toEqual(initialState.hunter.movieHunterItems);
-        expect(wrapper.find(MovieHunter).prop('sortFilter')).toEqual(initialState.hunter.sortFilter);
-        expect(wrapper.find(MovieHunter).prop('searchFilter')).toEqual(initialState.hunter.searchFilter);
     });
 
     it('test mapDispatchToProps', () => {
@@ -90,8 +121,10 @@ describe('<MovieHunter/>', () => {
     });
 
     it('switchSearchFilterHandler dispatch SEARCH_FILTER action', () => {
-        wrapper.find(MovieHunter).instance().switchSearchFilterHandler(0);
+        wrapper.instance().switchSearchFilterHandler(0);
+        store.dispatch(actionCreators.searchFilter('title'));
         const action = store.getActions();
+        expect(mockSearchFilterSwitchedCallBack).toBeCalled();
         expect(action[0]).toEqual({
             type: actionTypes.SEARCH_FILTER,
             payload: {searchFilterText: 'title'}
@@ -99,9 +132,11 @@ describe('<MovieHunter/>', () => {
     });
 
     it('switchSortFilterHandler dispatch SORT_FILTER action', () => {
-        let movieHunter = wrapper.find(MovieHunter).instance();
+        let movieHunter = wrapper.instance();
         movieHunter.switchSortFilterHandler(1);
+        store.dispatch(actionCreators.sortFilter('vote_average'));
         const action = store.getActions();
+        expect(mockSearchFilterSwitchedCallBack).toBeCalled();
         expect(action[0]).toEqual({
                 type: actionTypes.SORT_FILTER,
                 payload: {sortFilterText: 'vote_average'}
@@ -110,16 +145,16 @@ describe('<MovieHunter/>', () => {
 
     it('componentDidUpdate dispatch SORT_MOVIES action', () => {
         const prevProp = {sortFilter: 'vote_average'};
-        wrapper.find(MovieHunter).instance().componentDidUpdate(prevProp);
+        store.dispatch(actionCreators.sortMovies());
+        wrapper.instance().componentDidUpdate(prevProp);
         const action = store.getActions();
+        expect(mockSortMoviesCallBack).toBeCalled();
         expect(action[0]).toEqual({
             type: actionTypes.SORT_MOVIES
         });
     });
 
     it('check search button click', () => {
-        let mockCallBack = jest.fn();
-        wrapper = mount(<MovieHunter movieItems={movieItems} onMovieSearched={mockCallBack} onMovieChosen={mockCallBack}/>);
         wrapper.find(SearchPanel).find(Search).find('button').simulate('click');
         expect(mockCallBack).toBeCalled();
     })

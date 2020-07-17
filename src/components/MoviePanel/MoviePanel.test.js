@@ -29,7 +29,7 @@ describe('<MoviePanel/>', () => {
     it('should call any passed in onError after an image load error', () => {
         const mEvent = {target: wrapper.getDOMNode()};
         wrapper.find('img').prop('onError')(mEvent);
-        expect(mEvent.target.src).toBe('/'+ImageNotFound);
+        expect(mEvent.target.src).toBe(ImageNotFound);
     });
 
     it('empty runtime should remove label', () => {

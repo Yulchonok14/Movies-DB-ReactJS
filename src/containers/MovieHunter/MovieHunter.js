@@ -17,7 +17,7 @@ export class MovieHunter extends Component {
     };
 
     componentDidMount() {
-        const searchText = this.props.match.params.text;
+        const searchText = this.props.match.params.text || null;
         this.props.onMovieSearched(searchText, this.props.searchFilter);
         this.setState({searchText: searchText})
     }
@@ -53,10 +53,12 @@ export class MovieHunter extends Component {
     };
 
     movieSearchHandler = (text) => {
-        this.props.history.push({
-            pathname: '/search/' + text
-        });
-        this.props.onMovieSearched(text, this.props.searchFilter);
+        if(text.trim() !== '') {
+            this.props.history.push({
+                pathname: '/search/' + text.trim()
+            });
+            this.props.onMovieSearched(text.trim(), this.props.searchFilter);
+        }
     };
 
     chooseMovieHandler = (movie) => {

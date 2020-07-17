@@ -4,6 +4,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { movieItems } from '../../__mocks__/movieItems';
 
 describe('movie details reducer', () => {
+    const choseMovieItemInitial = null;
     const chosenMovieItem = {
         budget: 0,
         genres: ["Action", "Adventure", "Science Fiction"],
@@ -23,7 +24,7 @@ describe('movie details reducer', () => {
         expect(movieDetailsReducer(undefined, {})).toEqual(
             {
                 movieDetailsItems: [],
-                chosenMovieItem: chosenMovieItem
+                chosenMovieItem: choseMovieItemInitial
             }
         )
     });

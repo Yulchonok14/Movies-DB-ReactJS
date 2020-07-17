@@ -2,18 +2,22 @@ import * as actionTypes from './actionTypes';
 import { getQueryString } from '../utils/storeUtils';
 
 export const searchMovieHunter = (searchText, searchBy) => {
-    let url = 'https://reactjs-cdp.herokuapp.com/movies';
-    const params = {
-        search: searchText,
-        searchBy: searchBy
-    };
-    url += '?' + getQueryString(params);
-    return dispatch => {
-        return fetch(url)
-            .then(response => response.json())
-            .then(movieItems => {
-                dispatch(getHunterMovies(movieItems.data, searchText))
-            } )
+    if(searchText) {
+        let url = 'https://reactjs-cdp.herokuapp.com/movies';
+        const params = {
+            search: searchText,
+            searchBy: searchBy
+        };
+        url += '?' + getQueryString(params);
+        return dispatch => {
+            return fetch(url)
+                .then(response => response.json())
+                .then(movieItems => {
+                    dispatch(getHunterMovies(movieItems.data, searchText))
+                })
+        }
+    } else {
+        return dispatch => dispatch(getHunterMovies([], null));
     }
 };
 

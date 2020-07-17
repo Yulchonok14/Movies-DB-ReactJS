@@ -20,7 +20,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-let store = createStore(rootReducer/*persistedReducer*/, composeEnhancers(applyMiddleware(thunk)));
+let store = createStore(persistedReducer, composeEnhancers(applyMiddleware(thunk)));
 let persistor = persistStore(store);
 
 export { store, persistor }

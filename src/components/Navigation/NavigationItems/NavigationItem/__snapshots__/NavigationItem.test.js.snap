@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavigationItem/> NavigationItem renders correctly 1`] = `
+<li>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="MagnifierSign"
+      src="test-file-stub"
+    />
+  </a>
+</li>
+`;

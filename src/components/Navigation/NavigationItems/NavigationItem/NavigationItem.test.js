@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -15,7 +16,7 @@ describe('<NavigationItem/>', () => {
 
     it('NavigationItem renders correctly', () => {
         const tree = renderer
-            .create(<NavigationItem link={'/'}><img src={Magnifier} alt="MagnifierSign"/></NavigationItem>)
+            .create(<Router><NavigationItem link={'/'}><img src={Magnifier} alt="MagnifierSign"/></NavigationItem></Router>)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });

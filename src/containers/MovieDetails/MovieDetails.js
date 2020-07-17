@@ -9,26 +9,28 @@ import * as actionCreators from '../../store/actions/index';
 
 export class MovieDetails extends Component {
 
-
-    componentWillMount() {
-        this.unlisten = this.props.history.listen((location) => {
-            const movieId = location.pathname.slice(location.pathname.lastIndexOf('/')+1, location.pathname.length);
-            this.props.onMovieSearchedById(movieId)
-        });
-    }
     componentWillUnmount() {
         this.unlisten();
     }
 
     componentDidMount() {
+        this.unlisten = this.props.history.listen((location) => {
+                    const movieId = +location.pathname.slice(location.pathname.lastIndexOf('/')+1, location.pathname.length);
+                    Number.isInteger(movieId) && movieId > 0
+                    ? this.props.onMovieSearchedById(movieId)
+                    : null;
+                });
+
         const movieId = this.props.match.params.id;
         this.props.onMovieSearchedById(movieId);
     }
 
     componentDidUpdate(prevProps) {
-
-        if (this.props.chosenMovieItem !== prevProps.chosenMovieItem) {
-            this.props.onMovieSearched(this.props.chosenMovieItem.genres[0]);
+        if (this.props.chosenMovieItem !== prevProps.chosenMovieItem
+            && this.props.chosenMovieItem.id !== prevProps.chosenMovieItem.id) {
+            this.props.chosenMovieItem.genres[0]
+                ? this.props.onMovieSearched(this.props.chosenMovieItem.genres[0])
+                : null;
         }
     }
 
@@ -42,10 +44,11 @@ export class MovieDetails extends Component {
     render() {
         let movieDetails = null;
         if (this.props.chosenMovieItem) {
+            const genre = this.props.chosenMovieItem.genres[0] || 'unknown';
             movieDetails =
                 <React.Fragment>
                     <MoviePanel selectedMovie={this.props.chosenMovieItem}/>
-                    <InfoBar resultText={'Films by ' + this.props.chosenMovieItem.genres[0] + ' genre'}/>
+                    <InfoBar resultText={'Films by ' + genre + ' genre'}/>
                     <MovieItems chosenItem={this.chooseMovieHandler} movieItems={this.props.movieItems}/>
                 </React.Fragment>;
         }

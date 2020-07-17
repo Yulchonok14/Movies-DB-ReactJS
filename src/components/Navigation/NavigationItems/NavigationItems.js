@@ -5,7 +5,7 @@ import classes from './NavigationItems.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 import Magnifier from '../../../assets/images/magnifier.png';
 
-const NavigationItems = (props) => {
+export const NavigationItems = (props) => {
     const showSearch = props.location.pathname.includes('film') ? 'block' : 'none';
     return (
         <ul className={classes.NavigationItems}>

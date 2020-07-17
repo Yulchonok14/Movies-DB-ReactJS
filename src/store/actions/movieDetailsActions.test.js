@@ -50,7 +50,7 @@ describe('movieDetailsActions', () => {
         const actualRes = actionCreators.chooseMovieDetails(111);
         const expectedRes = {
             type: actionTypes.CHOOSE_MOVIE_DETAILS,
-            payload: {id: 111}
+            payload: {movieItem: 111}
         };
         expect(actualRes).toEqual(expectedRes);
     });

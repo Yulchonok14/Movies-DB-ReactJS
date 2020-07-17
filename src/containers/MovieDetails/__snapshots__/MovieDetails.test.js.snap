@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieDetails/> capturing Snapshot of MovieDetails 1`] = `
+Array [
+  <div>
+    <img
+      alt="Selected movie poster."
+      onError={[Function]}
+      src="https://upload.wikimedia.org/wikipedia/ru/9/9d/Bloodshot_poster.jpg"
+    />
+    <div>
+      <div>
+        <span>
+          Bloodshot
+        </span>
+        <span>
+          3.6
+        </span>
+      </div>
+      <div>
+        <span>
+          2020
+        </span>
+        <label>
+          year
+        </label>
+        <span>
+          110
+        </span>
+        <label>
+          min
+        </label>
+      </div>
+      <p>
+        Vin Diesel fans who can’t wait for the next installment of the “Fast and Furious” macho soap opera series can get their fix at “Bloodshot,” a comic book adaptation that’s as big a stickler about “family” yet far less satisfying than even the worst films of the "Fast" franchise. The family in question here is the wife of Ray Garrison (Diesel), who is put in danger by her spouse’s mercenary soldiering. Now, if you want to walk into director Dave Wilson’s sci-fi actioner as blindly as I did, exit this review now. If you desire a hint of what you’re in for, let me leave you with a few phrases you would have encountered had you stuck around: “Universal Soldier,” “robotic cucarachas,” “needle drop abuse of the Talking Heads” and “blatant rip-off.”
+      </p>
+    </div>
+  </div>,
+  <div>
+    <span>
+      Films by Action genre
+    </span>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <label />
+      <div />
+    </div>
+  </div>,
+  <div>
+    <div>
+      No films found
+    </div>
+  </div>,
+]
+`;

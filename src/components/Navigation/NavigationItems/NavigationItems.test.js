@@ -3,7 +3,7 @@ import React from 'react';
 import { configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import NavigationItems from './NavigationItems';
+import { NavigationItems } from './NavigationItems';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 configure({
@@ -14,7 +14,7 @@ describe('<NavigationItems/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<NavigationItems/>);
+        wrapper = shallow(<NavigationItems location={{pathname: 'film'}} />);
     });
 
     it('NavigationItems should have NavigationItem', () => {
